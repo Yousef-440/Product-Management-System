@@ -1,0 +1,12 @@
+.title .t1{
+    color: aliceblue;
+    letter-spacing: 1.5px;
+}
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgb(255, 0, 0) !important;
+}
+.input-group:focus-within .prod-name , .input-group:focus-within .pr {
+    outline: 1px solid rgb(255, 0, 0) !important;
+}
+

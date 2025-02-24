@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+    
+    <div class="container">
+        
+        <div class="head p-4 d-flex justify-content-center title">
+            <h3 class="t1">Product Management System</h3>
+        </div>
+
+        <div class="input">
+            <div class="input-group mb-3">
+                <span class="input-group-text prod-name" id="inputGroup-sizing-default">Prod-Name</span>
+                <input type="text" id="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        
+            <div class="price mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text pr">price</span>
+                    <input onkeyup="getTotal()" type="number" id="price" placeholder="price" aria-label="First name" class="form-control">
+                    <input onkeyup="getTotal()" type="number" id="taxes" placeholder="Tax" aria-label="Last name" class="form-control">
+                    <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads" aria-label="Last name" class="form-control">
+                    <input onkeyup="getTotal()" type="number" id="discount" placeholder="dis" aria-label="Last name" class="form-control">
+                    <span class="input-group-text">$</span>
+                    <span id="total" class="input-group-text">0.00</span>
+                </div>
+            </div>
+        
+            <div class="input-group mb-3">
+                <span class="input-group-text prod-name" id="sho">#of-prod</span>
+                <input type="number" id="count" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        
+            <div class="input-group mb-3">
+                <span class="input-group-text prod-name">Categ</span>
+                <input type="text" id="category" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        
+            <div class="d-flex justify-content-center mb-3">
+                <button type="button" id="submit" class="btn btn-outline-secondary">Create Product</button>
+            </div>
+        </div>
+        
+        <div class="output">
+            <div class="searchBlock mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </span>
+                    <input onkeyup="searchData(this.value)" type="text" id="search" class="form-control" placeholder="Search Product" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="btnSearch d-flex justify-content-center gap-5">
+                    <button type="button" onclick="getSearchMood(this.id)" id="searchTitle" class="btn btn-secondary" >Search By Title</button>
+                    <button type="button" onclick="getSearchMood(this.id)" id="searchCategory" class="btn btn-secondary">Search By Category</button>
+                </div>
+            </div>
+
+            <div id="deleteAll" class="mb-2">
+
+            </div>
+
+            <table class="table table-dark table-sm">
+                
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">TAXES</th>
+                        <th scope="col">ADS</th>
+                        <th scope="col">DISCOUNT</th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col">CATEGORY</th>
+                        <th scope="col">UPDATE</th>
+                        <th scope="col">DELETE</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="info.js"></script>
+</html>
